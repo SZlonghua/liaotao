@@ -11,6 +11,7 @@
     <groupId>com.liaotao</groupId>
     <artifactId>liaotao</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>liaotao</name>
     <description>Demo project for Spring Boot</description>
 
@@ -25,6 +26,8 @@
     <modules>
         <module>liaotao-eureka-server</module>
         <module>liaotao-eureka-provider</module>
+        <module>liaotao-eureka-consumer</module>
+        <module>liaotao-jackson</module>
     </modules>
 
     <dependencyManagement>

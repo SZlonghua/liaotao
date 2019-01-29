@@ -1,4 +1,4 @@
-package com.liaotao.eureka.consumer.config;
+package com.liaotao.jackson.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -6,7 +6,6 @@
 		<groupId>com.liaotao</groupId>
 		<artifactId>liaotao</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<artifactId>liaotao-eureka-provider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
