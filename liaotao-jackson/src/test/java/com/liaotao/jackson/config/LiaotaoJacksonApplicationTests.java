@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -27,8 +29,14 @@ public class LiaotaoJacksonApplicationTests {
 
 		// 写为字符串
 		String text = mapper.writeValueAsString(friend);
+
+		Map<Object,Object> map = new HashMap<Object,Object>();
+		map.put("nickname","liaotao");
+		map.put("age","35");
+		Friend friend1 = mapper.convertValue(map, Friend.class);
+		System.out.println(friend1);
 		// 写为文件
-		mapper.writeValue(new File("G:\\friend.json"), friend);
+		/*mapper.writeValue(new File("G:\\friend.json"), friend);
 		// 写为字节流
 		byte[] bytes = mapper.writeValueAsBytes(friend);
 		System.out.println(text);
@@ -38,7 +46,7 @@ public class LiaotaoJacksonApplicationTests {
 		newFriend = mapper.readValue(bytes, Friend.class);
 		// 从文件中读取
 		newFriend = mapper.readValue(new File("G:\\friend.json"), Friend.class);
-		System.out.println(newFriend);
+		System.out.println(newFriend);*/
 
 	}
 
