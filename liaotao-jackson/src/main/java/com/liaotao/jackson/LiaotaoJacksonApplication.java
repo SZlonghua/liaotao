@@ -1,4 +1,4 @@
-package com.liaotao.jackson.config;
+package com.liaotao.jackson;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
