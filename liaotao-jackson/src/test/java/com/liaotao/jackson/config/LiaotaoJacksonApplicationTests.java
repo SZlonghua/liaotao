@@ -9,6 +9,7 @@ import org.quartz.TriggerUtils;
 import org.quartz.impl.triggers.CronTriggerImpl;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.StopWatch;
 
 import java.io.File;
 import java.io.IOException;
@@ -74,6 +75,33 @@ public class LiaotaoJacksonApplicationTests {
             System.out.println(dateFormat.format(date));
         }
         return list;
+    }
+
+    @Test
+    public void contextLoads2() throws InterruptedException {
+        test2();
+    }
+
+    private static void test2() throws InterruptedException {
+        StopWatch sw = new StopWatch();
+
+        sw.start("起床");
+        Thread.sleep(1000);
+        sw.stop();
+
+        sw.start("洗漱");
+        Thread.sleep(2000);
+        sw.stop();
+
+        sw.start("锁门");
+        Thread.sleep(500);
+        sw.stop();
+
+        System.out.println("sw.prettyPrint():"+sw.prettyPrint());
+        System.out.println("sw.getTotalTimeMillis()"+sw.getTotalTimeMillis());
+        System.out.println("sw.getLastTaskName()"+sw.getLastTaskName()+sw.getLastTaskInfo().getTimeMillis());
+        System.out.println("sw.getLastTaskInfo()"+sw.getLastTaskInfo());
+        System.out.println("sw.getTaskCount()"+sw.getTaskCount());
     }
 
 }
