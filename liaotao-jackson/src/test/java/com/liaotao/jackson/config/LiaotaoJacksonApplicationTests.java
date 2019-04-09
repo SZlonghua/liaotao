@@ -1,5 +1,6 @@
 package com.liaotao.jackson.config;
 
+import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.liaotao.jackson.model.Friend;
@@ -103,6 +104,14 @@ public class LiaotaoJacksonApplicationTests {
         System.out.println("sw.getLastTaskInfo()"+sw.getLastTaskInfo());
         System.out.println("sw.getTaskCount()"+sw.getTaskCount());
     }
+
+	@Test
+	public void testStreamWriteFeatures() throws Exception
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		JsonFactory f = mapper.getFactory();
+	}
+
 
 }
 
