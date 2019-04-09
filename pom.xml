@@ -28,6 +28,8 @@
         <module>liaotao-eureka-provider</module>
         <module>liaotao-eureka-consumer</module>
         <module>liaotao-jackson</module>
+        <module>liaotao-event</module>
+        <module>liaotao-swing</module>
     </modules>
 
     <dependencyManagement>
