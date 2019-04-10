@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.quartz.TriggerUtils;
 import org.quartz.impl.triggers.CronTriggerImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StopWatch;
@@ -56,7 +57,7 @@ public class LiaotaoJacksonApplicationTests {
 
     @Test
     public void contextLoads1() {
-        getNextExecTime("*/2 * * ? * TUE-SAT",20);
+        getNextExecTime("0 */10 * ? * MON-SAT",20);
     }
 
     public static List<String> getNextExecTime(String cronExpression, Integer numTimes) {
@@ -102,6 +103,19 @@ public class LiaotaoJacksonApplicationTests {
         System.out.println("sw.getLastTaskName()"+sw.getLastTaskName()+sw.getLastTaskInfo().getTimeMillis());
         System.out.println("sw.getLastTaskInfo()"+sw.getLastTaskInfo());
         System.out.println("sw.getTaskCount()"+sw.getTaskCount());
+    }
+
+    @Test
+    public void contextLoads3() throws InterruptedException {
+        User u = new User();//source
+        u.setUid("1");
+        u.setName("tom");
+        u.setAge((short)18);
+
+        Student s = new Student();//target
+
+        BeanUtils.copyProperties(u, s);
+        System.out.println("[sid]"+s.getSid()+"#[name]"+s.getName()+"#[sex]"+s.getSex()+"#[age]"+s.getAge());
     }
 
 }
