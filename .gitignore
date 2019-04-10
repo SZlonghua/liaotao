@@ -159,3 +159,9 @@ src/main/resources/templates/
 /liaotao-eureka-server/.mvn/wrapper/
 /liaotao-eureka-provider/.mvn/wrapper/
 /liaotao-eureka-consumer/.mvn/wrapper/
+.gitignore
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml
+src/

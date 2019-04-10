@@ -2,6 +2,7 @@ package com.liaotao.event.listner;
 
 import com.liaotao.event.Order;
 import com.liaotao.event.Person;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -12,10 +13,12 @@ import org.springframework.stereotype.Component;
  * @Description:
  */
 @Component
+@Slf4j
 public class EventConfig {
 
     @EventListener(value = Person.class)
     public void handEvent(Person person){
+        log.info("QQQQQQQQQQQQQQQQQQQ");
         System.out.println(Thread.currentThread().getId()+":"+person.toString());
     }
 
