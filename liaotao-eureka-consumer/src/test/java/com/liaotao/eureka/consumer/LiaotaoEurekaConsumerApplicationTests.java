@@ -11,6 +11,7 @@ public class LiaotaoEurekaConsumerApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("ddd");
 	}
 
 }
