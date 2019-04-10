@@ -24,6 +24,8 @@ public class A {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
+
+
         Thread.State state = t.getState();
         System.out.println("sss:"+state);
         t1.start();
