@@ -3,13 +3,8 @@ package com.liaotao.event;
 import com.liaotao.event.javaevent.OneEventListener;
 import com.liaotao.event.javaevent.Source;
 import com.liaotao.event.javaevent.TwoEventListener;
-import com.liaotao.event.observermodel.MySubject;
-import com.liaotao.event.observermodel.Observer1;
-import com.liaotao.event.observermodel.Observer2;
-import com.liaotao.event.observermodel.Subject;
+import com.liaotao.event.observermodel2.*;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +13,8 @@ import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 @Slf4j
 public class LiaotaoEventApplicationTests {
 
@@ -27,6 +22,17 @@ public class LiaotaoEventApplicationTests {
 
     @Autowired
     private ApplicationEventPublisher eventPublisher;
+
+    //观察者模式
+    @Test
+    public void test() {
+        log.info("aaaaaaaa");
+        Subject sub = new MySubject();
+        sub.add(new Observer1());
+        sub.add(new Observer2());
+
+        sub.operation();
+    }
 
     //观察者模式
     @Test
@@ -54,8 +60,13 @@ public class LiaotaoEventApplicationTests {
 
     @Test
     public void contextLoads3() {
-        eventPublisher.publishEvent(new Person("1","liaotao"));
-        eventPublisher.publishEvent(new Order("rrrrrrrr"));
+        try {
+            eventPublisher.publishEvent(new Person("1","liaotao"));
+        }catch (IllegalArgumentException e){
+            System.out.println("捕获到异常："+e.getStackTrace());
+        }
+
+        //eventPublisher.publishEvent(new Order("rrrrrrrr"));
     }
 
 }

@@ -18,14 +18,18 @@ public class EventConfig {
 
     @EventListener(value = Person.class)
     public void handEvent(Person person){
+
         log.info("QQQQQQQQQQQQQQQQQQQ");
+
         System.out.println(Thread.currentThread().getId()+":"+person.toString());
+        throw new IllegalArgumentException("非法异常");
     }
 
 
     @EventListener(value = Person.class)
     public void handEvent1(Person person){
         System.out.println("1:"+Thread.currentThread().getId()+":"+person.toString());
+
     }
 
     @EventListener(value = Order.class)
